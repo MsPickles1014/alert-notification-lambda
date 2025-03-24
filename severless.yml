@@ -1,0 +1,22 @@
+service: alert-notifications
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    SLACK_WEBHOOK_URL: ${env:SLACK_WEBHOOK_URL}
+
+functions:
+  alertHandler:
+    handler: handler.alertHandler
+    events:
+      - sns:
+          topicName: ALERT_NOTIFICATIONS
+
+resources:
+  Resources:
+    AlertSNSTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: ALERT_NOTIFICATIONS
