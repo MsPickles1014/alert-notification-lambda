@@ -69,6 +69,8 @@ This sets up:
 ---
 
 ## 💡 Usage
+## Video Demo
+https://github.com/MsPickles1014/alert-notification-lambda/blob/main/assets/Lambda%20Alert%20%20Video.mp4
 
 ### ✅ Publish a test alert to SNS
 
